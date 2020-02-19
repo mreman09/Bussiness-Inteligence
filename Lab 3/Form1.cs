@@ -38,9 +38,15 @@ namespace Lab_3
                     Dates.Add(reader[1].ToString());
                 }
 
+                List<string> DatesFormatted = new List<string>();
+                foreach (string date in Dates)
+                {
+                    var dates = date.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
+                    DatesFormatted.Add(dates[0]);
+                }
 
-                lstData.DataSource = Dates;
-               
+                lstData.DataSource = DatesFormatted;
+
             }
         }
 
